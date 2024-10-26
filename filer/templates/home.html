@@ -1,0 +1,8 @@
+<h1>Files:</h1>
+<a href="{% url 'create_file' 'py' %}">Create py file</a>
+<a href="{% url 'create_file' 'txt' %}">Create txt file</a>
+<ul>
+{% for file in files %}
+<li><a href="{% url 'edit_file' file.id %}">{{ file.id }}</a></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,8 @@
+<form action="{% url 'edit_file' file.id %}" method="POST">
+    <input type="submit" value="Save"><br>
+    <textarea name="content" rows="20" cols="80">{{ content }}</textarea>
+    <input type="id" disabled hidden value="{{ file.id }}">
+    {% csrf_token %}
+</form>
+<a href="{% url 'delete' file.id %}">Delete</a>
+<a href="{% url 'download' file.id %}">Download</a>
